@@ -1,4 +1,5 @@
 import { Zap } from 'lucide-react'
+import img from '/image (3).png'
 import React from 'react'
 
 const Sidebar = () => {
@@ -26,9 +27,19 @@ const Sidebar = () => {
 
 <div className='p-4 border-t border-slate-200/50 dark:border-slate-700/50'>
 <div className='flex items-center space-x-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50'>
-<img src="
-" alt=""
+<img src={img} alt=""
 className='w-10 h-10 rounded-full ring-2 ring-blue-500' />
+
+<div className='flex-1 min-w-0'>
+  <div className="flex-1 min-w-0">
+
+    <p className='text-sm font-medium text-slate-800 dark:text-white truncate'>Jane Jhonson</p>
+    <p className='text-xs text-slate-500 dark:text-slate-400 truncate '>Administrator</p>
+  
+  </div>
+
+</div>
+
 </div>
 
 </div>
@@ -41,3 +52,4 @@ className='w-10 h-10 rounded-full ring-2 ring-blue-500' />
 }
 
 export default Sidebar
+//9:20
