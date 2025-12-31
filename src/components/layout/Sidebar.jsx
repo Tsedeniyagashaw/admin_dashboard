@@ -1,10 +1,89 @@
-import { Zap } from 'lucide-react'
+import {  BarChart3, Calendar, CreditCard, FileText, LayoutDashboard, MessageSquare, Package, Settings, ShoppingBag, Users, Zap } from 'lucide-react'
 import img from '/jane.jfif'
 import React from 'react'
 
+
+
+const menuItems = [
+{
+  id:'dashboard',
+  icon: LayoutDashboard,
+  label: 'Dashboard',
+  active: true,
+  badge: 'New',
+},
+{
+  id:'analytics',
+  icon: BarChart3,
+  label: 'Analytics',
+  subMenu: [
+    {id:'overview', label: 'Overview'},
+    {id:'reports', label: 'Reports'},
+    {id:'statistics', label: 'Statistics'},
+  ]
+},
+{
+  id:"users",
+  icon: Users,
+  label: 'Users',
+  count: '2.4k',
+  subMenu: [
+    {id:'all-users', label: 'All Users'},
+    {id:'roles', label: 'Roles & Permissions'},
+    {id:'activity', label: 'User Activity'},
+  ]
+},
+{
+ id: 'ecommerce',
+ icon: ShoppingBag,
+ label: 'E-commerce',
+ subMenu:[
+    {id:'products', label: 'Products'},
+    {id:'orders', label: 'Orders'},
+    {id:'customers', label: 'Customers'},
+    {id:'discounts', label: 'Discounts'},
+ ]
+},
+{
+  id: 'inventory',
+  icon: Package,
+  label: 'Inventory',
+  count: '1.2k'
+
+},
+{
+  id: 'transactions',
+  icon: CreditCard,
+  label: 'Transactions',
+},
+{
+  id:'messages',
+  icon: MessageSquare,
+  label: 'Messages',
+   badge: 'New',
+},
+{
+  id:'calendar',
+  icon: Calendar,
+  label: 'Calendar',
+
+},
+{
+  id:'reports',
+  icon: FileText,
+  label: 'Reports',
+},
+{
+  id:'settings',
+  icon: Settings,
+  label: 'Settings',  
+}
+
+];
+
 const Sidebar = () => {
   return (
-    <div className='transition duration-300 ease-in-out bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-r border-slate-200/50 dark:border-slate-700/50
+    <div className='w-72 transition duration-300 ease-in-out bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-r border-slate-200/50 dark:border-slate-700/50
     flex flex-col relative z-10 '>
     <div className='p-6 border-b border-slate-200/50 dark:border-slate-700/50'>
     <div className='flex items-center space-x-3'>
@@ -22,6 +101,25 @@ const Sidebar = () => {
     </div>
 
 <nav className='flex-1 space-y-2 overflow-y-auto'>
+  {menuItems.map((item) => (
+    <div key={item.id} >
+<button className={`w-full flex items-center justify-between p-3
+  rounded-xl  transition-all duration-200
+  `} ><div className='flex items-center space-x-3'>
+     <item.icon className={`w-5 h-5`} />
+     <>
+     <span className='font-medium ml-2'>{item.label}</span>
+     {item.badge && (<span className='px-2 py-1 text-xs
+      bg-red-500 text-white rounded-full'>{item.badge}</span>
+   
+  )}
+     {item.count && <span className='px-2 py-1 text-xs bg-slate-200 dark:bg-slate-700 text-salte-600 dark:text-salte-300 rounded-full'>{item.count}</span>}
+     </>
+     </div>
+
+</button>
+    </div>
+  ))}
 </nav>
 
 
@@ -52,4 +150,3 @@ className='w-10 h-10 rounded-full ring-2 ring-blue-500' />
 }
 
 export default Sidebar
-//9:20
