@@ -1,5 +1,5 @@
 import { Zap } from 'lucide-react'
-import img from '/image (3).png'
+import img from '/jane.jfif'
 import React from 'react'
 
 const Sidebar = () => {
