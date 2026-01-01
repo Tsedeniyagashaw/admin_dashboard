@@ -1,4 +1,4 @@
-import {  BarChart3, Calendar, CreditCard, FileText, LayoutDashboard, MessageSquare, Package, Settings, ShoppingBag, Users, Zap } from 'lucide-react'
+import {  BarChart3, Calendar, ChevronDown, CreditCard, FileText, LayoutDashboard, MessageSquare, Package, Settings, ShoppingBag, Users, Zap } from 'lucide-react'
 import img from '/jane.jfif'
 import React from 'react'
 
@@ -117,7 +117,21 @@ const Sidebar = () => {
      </>
      </div>
 
+{item.subMenu && (
+  <ChevronDown className='w-4 h-4 transition-transform' />
+)}
+
+
 </button>
+
+<div className='ml-8 mt-2 space-y-1'>
+  {item.subMenu.map((subItem) =>(
+    <button>{subItem.label}</button>
+  ))}
+
+</div>
+
+
     </div>
   ))}
 </nav>
