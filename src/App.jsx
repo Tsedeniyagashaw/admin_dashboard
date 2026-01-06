@@ -1,6 +1,7 @@
 import React from 'react'
 import Sidebar from './components/layout/Sidebar'
 import Header from './components/layout/Header'
+import Dashboard from './components/Dashboard/Dashboard'
 
 const App = () => {
 
@@ -20,6 +21,13 @@ const App = () => {
         <Header sideBarCollapsed={sideBarCollapsed}
         onToggleSidebar ={() => setSideBarCollapsed(!sideBarCollapsed)}
         />
+ <main className='flex-1 overflow-y-auto bg-transparent'>
+  <div className='p-6 space-y-6'>
+         {currentPage === 'dashboard' &&
+          <Dashboard />}
+  </div>
+ </main>
+
 
       </div>
 
@@ -29,3 +37,6 @@ const App = () => {
 }
 
 export default App
+
+
+//50
