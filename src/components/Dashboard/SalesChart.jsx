@@ -69,3 +69,5 @@ const SalesChart = () => {
 };
 
 export default SalesChart;
+
+//1:19
